@@ -28,7 +28,8 @@ function getLinkActiveMenu($uri)
     return $data;
 }
 
-function selectCateBook($value){
+function selectCateBook($value)
+{
 
     include('conect_database.php');
     $sql = "select id_book_cate, name_book_cate from tb_book_category order by id_book_cate asc";
@@ -36,32 +37,34 @@ function selectCateBook($value){
 
     $data = '<select class="form-select" name="id_book_cate" aria-label="Default select example required">
     <option>-- เลือก --</option>';
-    while($result = $query->fetch_assoc()){
-        if($value == ''){
-            $data .='<option value="'.$result['id_book_cate'].'">'.$result['name_book_cate'].'</option>';
+    while ($result = $query->fetch_assoc()) {
+        if ($value == '') {
+            $data .= '<option value="' . $result['id_book_cate'] . '">' . $result['name_book_cate'] . '</option>';
+        } else {
 
-        }else{
-
-            $data .='<option '; 
-            if($value == $result['id_book_cate']){
-                $data .='selected';
+            $data .= '<option ';
+            if ($value == $result['id_book_cate']) {
+                $data .= 'selected';
             }
-            
-            $data .=' value="'.$result['id_book_cate'].'">'.$result['name_book_cate'].'</option>';
 
+            $data .= ' value="' . $result['id_book_cate'] . '">' . $result['name_book_cate'] . '</option>';
         }
     }
     $data .= '</select>';
     return $data;
-
 }
 
-function ListCateBook($value){
+function ListCateBook($value)
+{
 
     include('conect_database.php');
-    $sql = "select name_book_cate from tb_book_category where id_book_cate = '".$value."' ";  
-    $query = $mysqli->query($sql);
-    $data = $query->fetch_assoc();
-    return $data['name_book_cate'];
-
+    if ($value == '0') {
+        $rec = '';
+    } else {
+        $sql = "select name_book_cate from tb_book_category where id_book_cate = '" . $value . "' ";
+        $query = $mysqli->query($sql);
+        $data = $query->fetch_assoc();
+        $rec = $data['name_book_cate'];
+    }
+    return $rec;
 }
