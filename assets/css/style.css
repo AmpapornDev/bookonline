@@ -1,0 +1,16 @@
+.img-responsive-180 {
+  max-width: 100%;
+  width: 180px;
+}
+
+.img-responsive-80 {
+  max-width: 100%;
+  width: 80px;
+}
+
+.text-wrap {
+
+  inline-size: 180px;
+  overflow-wrap: break-word;
+
+}
