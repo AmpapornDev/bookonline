@@ -68,3 +68,13 @@ function ListCateBook($value)
     }
     return $rec;
 }
+
+function checkLogin(){
+
+	if($_SESSION["UserID"] == "" and $_SESSION["UserEmail"] == "")
+	{
+		header("location:../../view/admin_login/index.php");
+        exit(0);
+	}
+	
+}

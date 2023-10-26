@@ -56,6 +56,14 @@
             </a>
           </li>
         </ul>
+        <hr/>
+        <b>Admin : </b>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+          <?php echo $_SESSION["UserEmail"];?>
+          </li>
+        </ul>
+       
 
       </div>
     </nav>

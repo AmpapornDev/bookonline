@@ -1,10 +1,12 @@
 <?php
 
+session_start();
 include("../../lib/conect_database.php");
 include("../../lib/function.php");
 include("../../controller/home/c_list.php");
 include("../header.php");
 include("../nav_menu.php");
+
 
 ?>
 

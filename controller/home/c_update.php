@@ -17,7 +17,7 @@ if ($_FILES['image_book']['name'] != '') {
 
     $image = $_FILES['image_book']['name'];
     $tmp = $_FILES['image_book']['tmp_name'];
-    move_uploaded_file($tmp, "../assets/image/cover_book/".$image);
+    move_uploaded_file($tmp, "../../assets/image/cover_book/".$image);
 
     $update_imge = "UPDATE tb_book SET image_book = '".$image."' WHERE id_book = '".$id."'";
     $mysqli->query($update_imge);
